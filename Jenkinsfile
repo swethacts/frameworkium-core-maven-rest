@@ -28,7 +28,7 @@ pipeline {
         //junit '**/target/*.xml'
          mvn allure:report 
 
-        archiveArtifacts 'target/*'
+        //archiveArtifacts 'target/*'
 
       }
 
