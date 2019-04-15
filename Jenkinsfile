@@ -25,7 +25,8 @@ pipeline {
 
       steps{
   
-        junit '**/target/*.xml'
+        //junit '**/target/*.xml'
+         mvn allure:report 
 
         archiveArtifacts 'target/*'
 
