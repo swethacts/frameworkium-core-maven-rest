@@ -27,7 +27,7 @@ pipeline {
   
         junit '**/target/*.xml'
 
-        archive 'target/*'
+        archiveArtifacts 'target/*'
 
       }
 
