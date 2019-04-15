@@ -8,7 +8,10 @@ pipeline {
     }
 
   stages {
-
+       stage('Tests') {
+        dir('src/test/java/com/frameworkium/integration/restfulbooker/api/tests/') {
+            restAssured()
+        }
     stage('Test') {
 
       steps{
@@ -26,7 +29,7 @@ pipeline {
       steps{
   
         //junit '**/target/*.xml'
-         mvn allure:report 
+        // mvn allure:report 
 
         //archiveArtifacts 'target/*'
 
