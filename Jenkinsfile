@@ -12,6 +12,7 @@ pipeline {
         dir('src/test/java/com/frameworkium/integration/restfulbooker/api/tests/') {
             restAssured()
         }
+       }
     stage('Test') {
 
       steps{
