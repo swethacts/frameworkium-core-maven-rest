@@ -22,15 +22,27 @@ pipeline {
     }
 
     stage('Results') {
+     
+       steps {
+    script {
+            allure([
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'target/allure-results']]
+            ])
+    }
+    }
 
-      steps{
+     // steps{
   
         //junit '**/target/*.xml'
-         mvn allure:report 
+         //mvn allure:report 
 
         //archiveArtifacts 'target/*'
 
-      }
+     // }
 
     }
 
