@@ -9,10 +9,22 @@ pipeline {
         stage("build") {
             steps {
                 sh 'mvn clean install -Dmaven.test.failure.ignore=true'
-		    //sh 'mvn clean install test'
             }
         }
     }
+	stage('reports') {
+    steps {
+    script {
+            allure([
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'target/surefire-reports/*.xml']]
+            ])
+    }
+    }
+}
     post {
         always {
             archive "target/**/*"
@@ -24,3 +36,8 @@ pipeline {
 	
 	
 }
+
+
+
+
+
