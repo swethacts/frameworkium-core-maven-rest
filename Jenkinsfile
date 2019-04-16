@@ -11,8 +11,10 @@ pipeline {
                 sh 'mvn clean install -Dmaven.test.failure.ignore=true'
             }
         }
-    }
-	stage('reports') {
+		
+		
+		
+			stage('reports') {
     steps {
     script {
             allure([
@@ -25,6 +27,9 @@ pipeline {
     }
     }
 }
+		
+    }
+
     post {
         always {
             archive "target/**/*"
