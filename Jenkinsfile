@@ -6,7 +6,7 @@ pipeline {
         }
     }
     stages {
-	   stage('Version') {
+	   /*stage('Version') {
 	  agent { docker 'weremsoft/gulp-xvfb-headless-chrome-protractor' } 
       steps {
 		//slackSend "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
@@ -21,7 +21,7 @@ pipeline {
 		//slackSend "Docker Container Destroyed"
 		//slackSend "Build Completed - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
 	  }
-    }
+    }*/
 	
         stage("build") {
             steps {
